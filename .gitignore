@@ -6,6 +6,7 @@
 *.lo
 *.o
 *.obj
+tmp_build_dir/*
 
 # Precompiled Headers
 *.gch
@@ -30,4 +31,7 @@
 *.exe
 *.out
 *.app
-tmp_build_dir/*
+*.ex
+
+# plot files
+plt*/*
