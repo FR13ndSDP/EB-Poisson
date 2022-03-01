@@ -14,8 +14,13 @@ void InitData (MultiFab& State)
         amrex::ParallelFor(bx,
         [=] AMREX_GPU_DEVICE (int i, int j, int k) noexcept
         {
+#if (AMREX_SPACEDIM == 2)
             if (i==70 && j==70 && k==0) {
-                q(i,j,k) = 1.0;
+                q(i,j,k) = 10.0;
+#elif (AMREX_SPACEDIM == 3)
+	        if (i==70 && j==70 && k==70) {
+	            q(i,j,k) = 10.0;
+#endif
             } else {
                 q(i,j,k) = 0.0;
             }
